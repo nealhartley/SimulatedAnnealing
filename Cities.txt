@@ -1,0 +1,3 @@
+Wellington,-41,174
+Auckland,-46,174
+Canberra,-35,149
