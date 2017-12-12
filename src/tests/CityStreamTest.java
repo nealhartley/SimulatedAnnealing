@@ -1,10 +1,9 @@
 package tests;
 
-import code.CityFactory;
-import code.ThreeDigitTuple;
+import code.*;
 import org.junit.Test;
-import code.CityStream;
-import code.City;
+
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -39,6 +38,23 @@ public class CityStreamTest {
         City test2 = cf.makeCity("home", 2, 6);
 
         assertTrue(test1.getDistance(test2) == 2);
+
+    }
+
+    @Test
+    public void testTour(){
+        CityFactory cf = new CityFactory();
+        City test1 = cf.makeCity("home", 2, 4);
+        City test2 = cf.makeCity("home", 2, 6);
+        City test3 = cf.makeCity("home", 2, 8);
+        ArrayList<City> cities = new ArrayList<City>();
+        cities.add(test1);
+        cities.add(test2);
+        cities.add(test3);
+
+        Tour tourTest = new Tour(cities);
+        System.out.println(tourTest.calcLength());
+        assertTrue(tourTest.calcLength() == 8);
 
     }
 
