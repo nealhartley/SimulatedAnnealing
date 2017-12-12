@@ -23,4 +23,15 @@ public class City {
     public String getName() {
         return name;
     }
+
+    public double getDistance(City cityStore) {
+
+        double opposite = this.positionX - cityStore.getPositionX();
+        double adjacent = this.positionY - cityStore.getPositionY();
+
+        double hypotenuse = ((opposite * opposite) + (adjacent * adjacent));
+        hypotenuse = Math.sqrt(hypotenuse);
+
+        return hypotenuse;
+    }
 }

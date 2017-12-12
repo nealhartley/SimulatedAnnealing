@@ -14,7 +14,7 @@ public class CityService {
 
     public ArrayList<CityFactory> fetchCities(){
         //set up cs
-
+        cs.setupStream("Cities.txt");
 
         //loop through cs return values to create cities w factory
 
