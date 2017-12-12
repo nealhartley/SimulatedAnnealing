@@ -1,6 +1,7 @@
 package code;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Tour {
 
@@ -49,9 +50,18 @@ public class Tour {
 
         ArrayList<City> clonedCities = (ArrayList<City>)cities.clone();
 
-        TODO: //need to implement a swap between two spots in the array. Then return a new Tour with that array.
+        //need to implement a swap between two spots in the array. Then return a new Tour with that array.
 
-        return this;
+        int indice1 = (int)(Math.random()*clonedCities.size()-1);
+
+        int indice2 = (int)(Math.random()*clonedCities.size()-1);;
+
+        City temp;
+        temp = clonedCities.get(indice1);
+        clonedCities.add(indice1, clonedCities.get(indice2));
+        clonedCities.add(indice2, temp);
+
+        return new Tour(clonedCities);
     }
 
 }
