@@ -45,4 +45,13 @@ public class Tour {
         return distance;
     }
 
+    public Tour mutateTwoCities(){
+
+        ArrayList<City> clonedCities = (ArrayList<City>)cities.clone();
+
+        TODO: //need to implement a swap between two spots in the array. Then return a new Tour with that array.
+
+        return this;
+    }
+
 }
