@@ -50,6 +50,7 @@ public class Tour {
         System.out.println("\n We are beginning the mutation");
 
         ArrayList<City> clonedCities = (ArrayList<City>)cities.clone();
+        System.out.println(" cloned cities size 1st = " + clonedCities.size());
 
         //need to implement a swap between two spots in the array. Then return a new Tour with that array.
 
@@ -59,10 +60,10 @@ public class Tour {
 
         City temp;
         temp = clonedCities.get(indice1);
-        clonedCities.add(indice1, clonedCities.get(indice2));
-        clonedCities.add(indice2, temp);
-
-
+        clonedCities.set(indice1, clonedCities.get(indice2));
+        clonedCities.set(indice2, temp);
+        System.out.println(" cloned cities size end = " + clonedCities.size());
+        System.out.println("mutation done\n");
         return new Tour(clonedCities);
     }
 
