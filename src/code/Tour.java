@@ -64,4 +64,10 @@ public class Tour {
         return new Tour(clonedCities);
     }
 
+    public void printTour(){
+        for (City c: cities) {
+            System.out.println(c.getName() + " position x: " + c.getPositionY() +", position y: "+ c.getPositionY());
+        }
+    }
+
 }

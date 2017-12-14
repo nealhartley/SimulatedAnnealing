@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
-public class CityStreamTest {
+public class Tests {
     @org.junit.Before
     public void setUp() throws Exception {
     }
@@ -55,6 +55,17 @@ public class CityStreamTest {
         Tour tourTest = new Tour(cities);
         System.out.println(tourTest.calcLength());
         assertTrue(tourTest.calcLength() == 8);
+
+    }
+
+    @Test
+    public void testAnnealer(){
+        CityService cs = new CityService();
+        ArrayList<City> cities = cs.fetchCities();
+        SimulatedAnnealer sa = new SimulatedAnnealer(cities, 11, 10, 0.9);
+        sa.Anneale();
+
+        assertTrue(false);
 
     }
 

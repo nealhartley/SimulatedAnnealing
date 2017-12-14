@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class SimulatedAnnealer {
 
     private Tour mainTour;
-    private  Tour newTour;
     private double TMAX;
     private double TMIN;
     private double cooling_factor;
@@ -28,14 +27,30 @@ public class SimulatedAnnealer {
             // get current Energy i.e. length of tour
             energy = mainTour.calcLength();
             //then alter and compute new energy
+            Tour newTour = this.mainTour.mutateTwoCities();
+
+            Double newEnergy = newTour.calcLength();
             //compute deltaE or change in Energy
 
+            Double deltaEnergy = (newEnergy-energy);
+            Double badJumper = Math.exp(-deltaEnergy/temp); //our probability for making a bad jump
             //if - deltaE is good then accept move
-                //current config becomes new config
+            if(deltaEnergy < 0){
+                this.mainTour = newTour;
+            }
             //else if - compute probability(change in energy / Temperature compared to rand(0,1)), At high temps we accept more bad moves
-                //current config becomes new config
+            else if(badJumper > Math.random()){
+                this.mainTour = newTour;
+            }
+
             //decrease Temp
+            temp = temp*cooling_factor;
         }
+
+        this.mainTour.printTour();
+        System.out.println(
+                "annealed"
+        );
     }
 
 }
