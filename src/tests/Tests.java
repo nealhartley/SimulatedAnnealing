@@ -18,6 +18,7 @@ public class Tests {
 
     @Test
     public void testOutPutOfCreation(){
+        System.out.println("testing output of creation");
         CityStream cs = new CityStream();
         cs.setupStream("Cities.txt");
 
@@ -27,11 +28,16 @@ public class Tests {
 
         assertTrue(cs.pop().equals(new ThreeDigitTuple("Canberra", -35, 149)));
 
+        assertTrue(cs.pop().equals(new ThreeDigitTuple("Sydney",-34,151)));
+
+        assertTrue(cs.pop().equals(new ThreeDigitTuple("Niue",-19,170)));
+
         assertTrue(cs.pop()==null);
     }
 
     @Test
     public void testCity(){
+        System.out.println("testing city");
         //we need some test Cities
         CityFactory cf = new CityFactory();
         City test1 = cf.makeCity("home", 2, 4);
@@ -43,6 +49,7 @@ public class Tests {
 
     @Test
     public void testTour(){
+        System.out.println("testing tour");
         CityFactory cf = new CityFactory();
         City test1 = cf.makeCity("home", 2, 4);
         City test2 = cf.makeCity("home", 2, 6);
@@ -60,6 +67,7 @@ public class Tests {
 
     @Test
     public void testAnnealer(){
+        System.out.println("testing annealer");
         CityService cs = new CityService();
         ArrayList<City> cities = cs.fetchCities();
         SimulatedAnnealer sa = new SimulatedAnnealer(cities, 11, 10, 0.9);

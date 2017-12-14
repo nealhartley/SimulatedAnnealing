@@ -39,14 +39,15 @@ public class Tour {
                 System.out.println("we on the last city");
             }
 
-            System.out.println("inside loop" + distance + " i == "+ i);
+            System.out.println("inside loop: distance = " + distance + " i == "+ i);
 
         }
-        System.out.println(cities.size());
+        System.out.println("city size: " + cities.size() +"\n");
         return distance;
     }
 
     public Tour mutateTwoCities(){
+        System.out.println("\n We are beginning the mutation");
 
         ArrayList<City> clonedCities = (ArrayList<City>)cities.clone();
 
@@ -61,12 +62,13 @@ public class Tour {
         clonedCities.add(indice1, clonedCities.get(indice2));
         clonedCities.add(indice2, temp);
 
+
         return new Tour(clonedCities);
     }
 
     public void printTour(){
         for (City c: cities) {
-            System.out.println(c.getName() + " position x: " + c.getPositionY() +", position y: "+ c.getPositionY());
+            System.out.println("\n printing tour\n" + c.getName() + " position x: " + c.getPositionY() +", position y: "+ c.getPositionY());
         }
     }
 
