@@ -7,7 +7,7 @@ public class City {
     private String name;
 
     public City(String name,double x, double y){
-        name = name;
+        this.name = name;
         positionX = x;
         positionY = y;
     }

@@ -30,19 +30,19 @@ public class Tour {
             cityStore = city;
 
 
-            System.out.println(i + " i - city size " + cities.size());
+
             i++;
             if(i == cities.size()){
                 //we on the last loop
                 distance = distance + city.getDistance(firstCity);
 
-                System.out.println("we on the last city");
+
             }
 
-            System.out.println("inside loop: distance = " + distance + " i == "+ i);
+
 
         }
-        System.out.println("city size: " + cities.size() +"\n");
+        System.out.println("distance: " + distance);
         return distance;
     }
 
@@ -68,8 +68,9 @@ public class Tour {
     }
 
     public void printTour(){
+        System.out.println("\n printing tour\n");
         for (City c: cities) {
-            System.out.println("\n printing tour\n" + c.getName() + " position x: " + c.getPositionY() +", position y: "+ c.getPositionY());
+            System.out.println("name:" + c.getName() + " position x: " + c.getPositionX() +", position y: "+ c.getPositionY());
         }
     }
 

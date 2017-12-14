@@ -70,7 +70,7 @@ public class Tests {
         System.out.println("testing annealer");
         CityService cs = new CityService();
         ArrayList<City> cities = cs.fetchCities();
-        SimulatedAnnealer sa = new SimulatedAnnealer(cities, 11, 10, 0.9);
+        SimulatedAnnealer sa = new SimulatedAnnealer(cities, 1000, 10, 0.9);
         sa.Anneale();
 
         assertTrue(false);

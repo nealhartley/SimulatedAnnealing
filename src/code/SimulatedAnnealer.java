@@ -49,7 +49,7 @@ public class SimulatedAnnealer {
 
         this.mainTour.printTour();
         System.out.println(
-                "annealed"
+                "annealed - final distance: " + this.mainTour.calcLength()
         );
     }
 
